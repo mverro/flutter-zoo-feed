@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -10,6 +13,12 @@ class DetailHistoryPage extends StatelessWidget {
   final Map datas;
   const DetailHistoryPage(
       {super.key, required this.items, required this.datas});
+
+  String encryptText(String text) {
+    // var bytes = utf8.encode(text);
+    var digest = sha1.convert([int.parse(text)]);
+    return digest.toString();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +93,7 @@ class DetailHistoryPage extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      datas['id'].toString(),
+                      encryptText(datas['id'].toString()),
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,

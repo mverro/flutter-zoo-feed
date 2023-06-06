@@ -17,7 +17,7 @@ class CustomSmallButtonCircle extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1.1,
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Coloors.green,
             shape: BoxShape.circle,
           ),

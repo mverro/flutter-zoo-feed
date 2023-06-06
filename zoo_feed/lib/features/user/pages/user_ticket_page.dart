@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:zoo_feed/features/ticket/ticket_page.dart';
 
 import '../../../common/utils/coloors.dart';
 
@@ -21,7 +22,7 @@ class _UserTicketPageState extends State<UserTicketPage> {
     try {
       final prefs = await SharedPreferences.getInstance();
       final accessToken = prefs.getString('access_token');
-      final url = Uri.parse('http://192.168.2.4:3000/api/userTicket/user');
+      final url = Uri.parse('http://13.55.144.244:3000/api/userTicket/user');
 
       final response = await http.get(
         url,
@@ -101,7 +102,7 @@ class _UserTicketPageState extends State<UserTicketPage> {
                         height: MediaQuery.of(context).size.height * 1 / 3,
                         width: MediaQuery.of(context).size.width * 3 / 4,
                         child: Image.network(
-                          'http://192.168.2.4:3000/${tickets[index]['barcode']}',
+                          'http://13.55.144.244:3000/${tickets[index]['barcode']}',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -132,7 +133,7 @@ class _UserTicketPageState extends State<UserTicketPage> {
                         height: 150,
                         width: 150,
                         child: Image.network(
-                          'http://192.168.2.4:3000/${tickets[index]['barcode']}',
+                          'http://13.55.144.244:3000/${tickets[index]['barcode']}',
                           fit: BoxFit.cover,
                         ),
                       ),

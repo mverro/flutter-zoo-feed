@@ -5,7 +5,7 @@ import 'package:zoo_feed/common/utils/coloors.dart';
 class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: SpinKitFadingCube(

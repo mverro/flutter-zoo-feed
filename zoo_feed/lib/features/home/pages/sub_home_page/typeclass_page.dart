@@ -20,7 +20,7 @@ class _TypeclassPageState extends State<TypeclassPage> {
 
   Future<void> fetchData() async {
     final response =
-        await http.get(Uri.parse('http://192.168.2.4:3000/api/classtypes'));
+        await http.get(Uri.parse('http://13.55.144.244:3000/api/classtypes'));
     if (response.statusCode == 200) {
       setState(() {
         classTypes = json.decode(response.body);
@@ -55,7 +55,7 @@ class _TypeclassPageState extends State<TypeclassPage> {
                 navigateToClassDetail(type['id']);
               },
               child: Container(
-                margin: EdgeInsets.all(8.0),
+                margin: const EdgeInsets.all(8.0),
                 width: 150.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
@@ -64,7 +64,7 @@ class _TypeclassPageState extends State<TypeclassPage> {
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 5,
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
@@ -74,7 +74,7 @@ class _TypeclassPageState extends State<TypeclassPage> {
                     fit: StackFit.expand,
                     children: [
                       Image.network(
-                        'http://192.168.2.4:3000/' + type['imageUrl'],
+                        'http://13.55.144.244:3000/' + type['imageUrl'],
                         fit: BoxFit.cover,
                       ),
                       Align(

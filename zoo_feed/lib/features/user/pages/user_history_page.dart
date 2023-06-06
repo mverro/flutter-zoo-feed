@@ -20,7 +20,7 @@ class _UserHistoryPageState extends State<UserHistoryPage> {
   List<dynamic> datas = [];
 
   Future getPayments() async {
-    final url = Uri.parse('http://192.168.2.4:3000/api/payment/user');
+    final url = Uri.parse('http://13.55.144.244:3000/api/payment/user');
     final pref = await SharedPreferences.getInstance();
     final accessToken = pref.getString('access_token');
     final Map<String, String> headers = {'access_token': accessToken!};

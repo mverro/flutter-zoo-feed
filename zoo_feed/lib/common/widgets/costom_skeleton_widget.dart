@@ -13,12 +13,12 @@ Widget buildLoadingSkeleton() {
             highlightColor: Colors.grey[100]!,
             enabled: true,
             child: Card(
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Container(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
               ),
             ),
           ),

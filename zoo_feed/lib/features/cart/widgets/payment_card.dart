@@ -101,7 +101,7 @@ class OrderCard extends StatelessWidget {
             const SizedBox(height: 4.0),
             Text(
               '$userName',
-              style: TextStyle(fontSize: 16.0),
+              style: const TextStyle(fontSize: 16.0),
             ),
             const SizedBox(height: 16.0),
             const Text(

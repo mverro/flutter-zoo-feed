@@ -42,7 +42,7 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
 
   Future<void> getAnimalDetail() async {
     final response = await http.get(Uri.parse(
-        'http://192.168.2.4:3000/api/animals/detail/${widget.animalId}'));
+        'http://13.55.144.244:3000/api/animals/detail/${widget.animalId}'));
     if (response.statusCode == 200) {
       setState(() {
         animalDetail = json.decode(response.body);
@@ -60,7 +60,7 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
   @override
   Widget build(BuildContext context) {
     if (animalDetail == null) {
-      return Scaffold(
+      return const Scaffold(
         body: Center(
           child: CircularProgressIndicator(),
         ),
@@ -68,7 +68,7 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
     } else {
       return Scaffold(
         body: Container(
-          constraints: BoxConstraints.expand(),
+          constraints: const BoxConstraints.expand(),
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
@@ -97,7 +97,7 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           image: NetworkImage(
-                            'http://192.168.2.4:3000/${users['imageUrl']}',
+                            'http://13.55.144.244:3000/${users['imageUrl']}',
                           ),
                           fit: BoxFit.cover,
                         ),
@@ -119,7 +119,7 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
                           right: 0,
                           bottom: top - 150,
                           child: Container(
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Coloors.green,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(37),
@@ -145,7 +145,7 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
                                 color: Colors.transparent,
                                 child: Image(
                                   image: NetworkImage(
-                                    'http://192.168.2.4:3000/' +
+                                    'http://13.55.144.244:3000/' +
                                         animalDetail['resultAF']['imageUrl'],
                                   ),
                                   fit: BoxFit.cover,
@@ -173,20 +173,20 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
                               text: '${animalDetail['resultAF']['age']}+',
                               destext: 'Age',
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             smallcard(
                               imageUrl: '',
                               text: animalDetail['resultAF']['sex'],
                               destext: 'Sex',
                               fontsize: 25,
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             smallcard(
                               imageUrl: '',
                               text: animalDetail['resultAF']['like'],
                               destext: 'Like',
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -206,7 +206,7 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
                                 fontsize: 15,
                               ),
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -230,7 +230,7 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Container(
                       width: 350,
                       child: Text(
@@ -242,13 +242,13 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
                         textAlign: TextAlign.justify,
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Container(
                       width: 350,
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'FOOD',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 50,
                             fontFamily: 'inter',
                             color: Coloors.green,
@@ -264,7 +264,7 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
                         child: Row(
                           children: [
                             if (foods.isEmpty)
-                              Text(
+                              const Text(
                                 'No food available',
                                 style: TextStyle(
                                   fontSize: 16,

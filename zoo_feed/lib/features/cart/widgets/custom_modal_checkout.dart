@@ -21,7 +21,7 @@ class custom_modal_checkout extends StatefulWidget {
 
 class _custom_modal_checkoutState extends State<custom_modal_checkout> {
   void checkout() async {
-    final url = Uri.parse('http://192.168.2.4:3000/api/order/create');
+    final url = Uri.parse('http://13.55.144.244:3000/api/order/create');
     final pref = await SharedPreferences.getInstance();
     final accessToken = pref.getString('access_token');
     Map<String, String> headers = {

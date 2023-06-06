@@ -15,7 +15,7 @@ class _AnimalPageState extends State<AnimalPage> {
 
   Future<void> getAnimals() async {
     final response =
-        await http.get(Uri.parse('http://192.168.2.4:3000/api/animals/'));
+        await http.get(Uri.parse('http://13.55.144.244:3000/api/animals/'));
     if (response.statusCode == 200) {
       setState(() {
         animals = json.decode(response.body);
@@ -37,7 +37,7 @@ class _AnimalPageState extends State<AnimalPage> {
   Future like(int id) async {
     final prefs = await SharedPreferences.getInstance();
     final accessToken = prefs.getString('access_token');
-    final url = Uri.parse('http://192.168.2.4:3000/api/animaluser/add');
+    final url = Uri.parse('http://13.55.144.244:3000/api/animaluser/add');
     final response = await http.post(
       url,
       headers: {
@@ -57,7 +57,8 @@ class _AnimalPageState extends State<AnimalPage> {
   Future unLike(int id) async {
     final prefs = await SharedPreferences.getInstance();
     final accessToken = prefs.getString('access_token');
-    final url = Uri.parse('http://192.168.2.4:3000/api/animaluser/delete/$id');
+    final url =
+        Uri.parse('http://13.55.144.244:3000/api/animaluser/delete/$id');
     final response = await http.delete(url, headers: {
       'access_token': accessToken!,
     });
@@ -72,7 +73,7 @@ class _AnimalPageState extends State<AnimalPage> {
     try {
       final prefs = await SharedPreferences.getInstance();
       final accessToken = prefs.getString('access_token');
-      final url = Uri.parse('http://192.168.2.4:3000/api/animaluser/info');
+      final url = Uri.parse('http://13.55.144.244:3000/api/animaluser/info');
 
       final response =
           await http.get(url, headers: {'access_token': accessToken!});
@@ -131,7 +132,7 @@ class _AnimalPageState extends State<AnimalPage> {
                             top: Radius.circular(15.0),
                             bottom: Radius.circular(15.0)),
                         child: Image.network(
-                          'http://192.168.2.4:3000/${animal['imageUrl']}',
+                          'http://13.55.144.244:3000/${animal['imageUrl']}',
                           fit: BoxFit.cover,
                           width: constraints.maxWidth,
                           height: constraints.maxHeight,

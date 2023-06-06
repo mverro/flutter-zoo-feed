@@ -32,8 +32,9 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<void> login() async {
     final data = {'email': emailC.text, 'password': passwordC.text};
-    final response = await http
-        .post(Uri.parse('http://192.168.2.4:3000/api/users/login'), body: data);
+    final response = await http.post(
+        Uri.parse('http://13.55.144.244:3000/api/users/login'),
+        body: data);
     if (response.statusCode == 200) {
       final Map<String, dynamic> dataResponse = json.decode(response.body);
 
@@ -78,10 +79,10 @@ class _LoginPageState extends State<LoginPage> {
         ),
       );
     } else {
-      login();
       setState(() {
         isLoading = true;
       });
+      login();
     }
   }
 
@@ -104,12 +105,6 @@ class _LoginPageState extends State<LoginPage> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
-          Icons.arrow_back_rounded,
-          color: Coloors.green,
-          weight: 50,
-          size: 30,
-        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),

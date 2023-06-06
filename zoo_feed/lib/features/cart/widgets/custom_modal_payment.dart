@@ -32,7 +32,7 @@ class _custom_modal_paymentState extends State<custom_modal_payment> {
           text: 'Please select a payment method');
       return;
     }
-    final url = Uri.parse('http://192.168.2.4:3000/api/payment/update');
+    final url = Uri.parse('http://13.55.144.244:3000/api/payment/update');
     final pref = await SharedPreferences.getInstance();
     final accessToken = pref.getString('access_token');
     Map<String, String> headers = {
@@ -72,10 +72,10 @@ class _custom_modal_paymentState extends State<custom_modal_payment> {
       barrierDismissible: false,
       builder: (BuildContext dialogContext) {
         return AlertDialog(
-          title: Text('Loading'),
+          title: const Text('Loading'),
           content: SingleChildScrollView(
             child: ListBody(
-              children: <Widget>[
+              children: const <Widget>[
                 Text('Uploading your data'),
                 CircularProgressIndicator(),
               ],
@@ -138,7 +138,7 @@ class _custom_modal_paymentState extends State<custom_modal_payment> {
               DropdownButtonFormField<String>(
                 decoration: InputDecoration(
                   labelText: 'Method Payment',
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   filled: true,
                   fillColor: Colors.grey[200],
                 ),

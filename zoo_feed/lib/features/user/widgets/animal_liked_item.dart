@@ -22,7 +22,7 @@ class AnimalLikedItem extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
             image: DecorationImage(
-              image: NetworkImage('http://192.168.2.4:3000/$image'),
+              image: NetworkImage('http://13.55.144.244:3000/$image'),
               fit: BoxFit.cover,
             ),
           ),

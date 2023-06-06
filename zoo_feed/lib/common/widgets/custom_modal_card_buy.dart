@@ -51,7 +51,7 @@ class _ModalBuyWidgetState extends State<ModalBuyWidget> {
         text: 'Must have at least one item',
       );
     } else {
-      final url = Uri.parse('http://192.168.2.4:3000/api/cartfood/create');
+      final url = Uri.parse('http://13.55.144.244:3000/api/cartfood/create');
       final pref = await SharedPreferences.getInstance();
       final accessToken = pref.getString('access_token');
       Map<String, String> headers = {'access_token': accessToken!};
@@ -90,22 +90,22 @@ class _ModalBuyWidgetState extends State<ModalBuyWidget> {
             SizedBox(height: 16),
             Text(
               '${widget.destext}',
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: Coloors.green,
                   fontFamily: 'inter'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
               width: 300,
               height: 200,
               decoration: BoxDecoration(
-                color: Color(0xFFFB983E),
+                color: const Color(0xFFFB983E),
                 borderRadius: BorderRadius.circular(15),
                 image: DecorationImage(
                   image: NetworkImage(
-                      'http://192.168.2.4:3000/' + widget.imageUrl),
+                      'http://13.55.144.244:3000/' + widget.imageUrl),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -119,13 +119,13 @@ class _ModalBuyWidgetState extends State<ModalBuyWidget> {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Stock: ${widget.stock}',
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontFamily: 'inter',
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -133,7 +133,7 @@ class _ModalBuyWidgetState extends State<ModalBuyWidget> {
                         locale: 'id_ID',
                         symbol: 'Rp',
                       ).format(widget.price)}',
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontFamily: 'inter',
                           fontWeight: FontWeight.bold),
@@ -142,7 +142,7 @@ class _ModalBuyWidgetState extends State<ModalBuyWidget> {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -154,14 +154,14 @@ class _ModalBuyWidgetState extends State<ModalBuyWidget> {
                     color: Coloors.green,
                   ),
                   child: IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.remove,
                       color: Colors.white,
                     ),
                     onPressed: decrementCount,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Container(
@@ -169,14 +169,14 @@ class _ModalBuyWidgetState extends State<ModalBuyWidget> {
                   child: Center(
                     child: Text(
                       'Qty : ' + count.toString(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontFamily: 'inter',
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Container(
@@ -187,7 +187,7 @@ class _ModalBuyWidgetState extends State<ModalBuyWidget> {
                     color: Coloors.green,
                   ),
                   child: IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.add,
                       color: Colors.white,
                     ),
@@ -196,7 +196,7 @@ class _ModalBuyWidgetState extends State<ModalBuyWidget> {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Container(
               height: 60,
               width: 210,
@@ -205,7 +205,7 @@ class _ModalBuyWidgetState extends State<ModalBuyWidget> {
                 color: Coloors.green,
               ),
               child: IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.shopping_cart,
                   color: Colors.white,
                 ),
@@ -214,7 +214,7 @@ class _ModalBuyWidgetState extends State<ModalBuyWidget> {
                 },
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
           ],
         ),
       ),

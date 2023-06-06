@@ -23,7 +23,7 @@ class _CartDetailPageState extends State<CartDetailPage> {
   List<int> checkedItems = [];
 
   Future<void> getCart() async {
-    final url = Uri.parse('http://192.168.2.4:3000/api/cart/');
+    final url = Uri.parse('http://13.55.144.244:3000/api/cart/');
     final pref = await SharedPreferences.getInstance();
     final accessToken = pref.getString('access_token');
     Map<String, String> headers = {'access_token': accessToken!};
@@ -39,7 +39,7 @@ class _CartDetailPageState extends State<CartDetailPage> {
   }
 
   Future<void> deleteCartItem(int cartId) async {
-    final url = Uri.parse('http://192.168.2.4:3000/api/cart/delete/$cartId');
+    final url = Uri.parse('http://13.55.144.244:3000/api/cart/delete/$cartId');
     final pref = await SharedPreferences.getInstance();
     final accessToken = pref.getString('access_token');
     Map<String, String> headers = {'access_token': accessToken!};
@@ -99,7 +99,7 @@ class _CartDetailPageState extends State<CartDetailPage> {
   }
 
   Future<void> updateQty(int cartId, int qty, int isIncrease) async {
-    final url = Uri.parse('http://192.168.2.4:3000/api/cart/update');
+    final url = Uri.parse('http://13.55.144.244:3000/api/cart/update');
     final pref = await SharedPreferences.getInstance();
     final accessToken = pref.getString('access_token');
     Map<String, String> headers = {'access_token': accessToken!};

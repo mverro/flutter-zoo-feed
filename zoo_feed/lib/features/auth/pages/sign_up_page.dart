@@ -24,6 +24,7 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController ageC = TextEditingController();
   TextEditingController emailC = TextEditingController();
   TextEditingController passwordC = TextEditingController();
+  bool isLoading = false;
 
   void signUp() async {
     final dataSignUp = {
@@ -33,12 +34,12 @@ class _SignUpPageState extends State<SignUpPage> {
       'password': passwordC.text,
       'roleId': '1',
     };
-    final url = Uri.parse('http://192.168.2.4:3000/api/users/create');
+    final url = Uri.parse('http://13.55.144.244:3000/api/users/create');
     final responseSignUp = await http.post(url, body: dataSignUp);
 
     if (responseSignUp.statusCode == 201) {
       final responseSignIn = await http.post(
-        Uri.parse('http://192.168.2.4:3000/api/users/login'),
+        Uri.parse('http://13.55.144.244:3000/api/users/login'),
         body: {
           'email': emailC.text,
           'password': passwordC.text,
@@ -106,6 +107,9 @@ class _SignUpPageState extends State<SignUpPage> {
         ),
       );
     } else {
+      setState(() {
+        isLoading = true;
+      });
       signUp();
     }
   }
@@ -123,11 +127,16 @@ class _SignUpPageState extends State<SignUpPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        leading: const Icon(
-          Icons.arrow_back_rounded,
-          color: Coloors.green,
-          weight: 50,
-          size: 30,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: const Icon(
+            Icons.arrow_back_rounded,
+            color: Coloors.green,
+            weight: 50,
+            size: 30,
+          ),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -165,11 +174,15 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             CustomPasswordField(controller: passwordC),
             const SizedBox(height: 30),
-            CustomElevatedButton(
-              onPressed: vaildation,
-              text: 'Sign Up',
-              isOutline: false,
-            ),
+            isLoading
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : CustomElevatedButton(
+                    onPressed: vaildation,
+                    text: 'Sign Up',
+                    isOutline: false,
+                  ),
             Footer(
               text: 'Already have an account?',
               title: 'Sign In',
@@ -179,7 +192,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   builder: (context) => const LoginPage(),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage>
   Future<void> fetchUser() async {
     final pref = await SharedPreferences.getInstance();
     final accessToken = pref.getString('access_token');
-    final url = Uri.parse('http://192.168.2.4:3000/api/users/account');
+    final url = Uri.parse('http://13.55.144.244:3000/api/users/account');
     Map<String, String> headers = {
       'access_token': accessToken!,
     };
@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage>
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     image: NetworkImage(
-                        'http://192.168.2.4:3000/${users['imageUrl']}'),
+                        'http://13.55.144.244:3000/${users['imageUrl']}'),
                     fit: BoxFit.cover,
                   ),
                 ),

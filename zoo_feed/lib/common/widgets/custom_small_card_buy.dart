@@ -44,10 +44,10 @@ class smallcardbuy extends StatelessWidget {
               width: 100,
               height: 100,
               decoration: BoxDecoration(
-                color: Color(0xFFFB983E),
+                color: const Color(0xFFFB983E),
                 borderRadius: BorderRadius.circular(15),
                 image: DecorationImage(
-                  image: NetworkImage('http://192.168.2.4:3000/' + imageUrl),
+                  image: NetworkImage('http://13.55.144.244:3000/' + imageUrl),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -78,7 +78,7 @@ class smallcardbuy extends StatelessWidget {
                   Icons.shopping_cart_checkout,
                   color: Colors.white,
                 ),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Coloors.green,
                   borderRadius:
                       BorderRadius.vertical(bottom: Radius.circular(15.0)),
@@ -95,7 +95,7 @@ class smallcardbuy extends StatelessWidget {
               child: Text(
                 destext,
                 textAlign: TextAlign.justify,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   color: Color(0xFFFB983E),
                   fontWeight: FontWeight.bold,

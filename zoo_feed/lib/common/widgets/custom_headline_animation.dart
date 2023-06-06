@@ -25,7 +25,7 @@ class _AnimatedTitleWidgetState extends State<AnimatedTitleWidget> {
       'Explore Habitat',
       'Explore Classification'
     ];
-    Timer.periodic(Duration(seconds: 5), (timer) {
+    Timer.periodic(const Duration(seconds: 5), (timer) {
       setState(() {
         currentIndex = (currentIndex + 1) % titles.length;
       });
@@ -35,7 +35,7 @@ class _AnimatedTitleWidgetState extends State<AnimatedTitleWidget> {
   @override
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       transitionBuilder: (Widget child, Animation<double> animation) {
         return FadeTransition(
           opacity: animation,
@@ -45,7 +45,7 @@ class _AnimatedTitleWidgetState extends State<AnimatedTitleWidget> {
       child: Text(
         titles[currentIndex],
         key: ValueKey<String>(titles[currentIndex]),
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 15,
           fontFamily: "inter",
         ),

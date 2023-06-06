@@ -21,14 +21,14 @@ class _bottomnavbarState extends State<bottomnavbar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(37),
           topRight: Radius.circular(37),
         ),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(37),
           topRight: Radius.circular(37),
         ),
@@ -37,13 +37,13 @@ class _bottomnavbarState extends State<bottomnavbar> {
           height: 70,
           child: Theme(
             data: Theme.of(context).copyWith(
-              canvasColor: Color(0xFF019267),
+              canvasColor: const Color(0xFF019267),
             ),
             child: BottomNavigationBar(
               unselectedItemColor: Colors.white,
-              selectedLabelStyle:
-                  TextStyle(fontFamily: 'inter', fontWeight: FontWeight.w800),
-              selectedIconTheme: IconThemeData(color: Color(0xFFFB983E)),
+              selectedLabelStyle: const TextStyle(
+                  fontFamily: 'inter', fontWeight: FontWeight.w800),
+              selectedIconTheme: const IconThemeData(color: Color(0xFFFB983E)),
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home),

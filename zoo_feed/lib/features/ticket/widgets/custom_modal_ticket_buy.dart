@@ -49,7 +49,7 @@ class _ModalTicketBuyState extends State<ModalTicketBuy> {
         text: 'Must have at least one item',
       );
     } else {
-      final url = Uri.parse('http://192.168.2.4:3000/api/cartTicket/create');
+      final url = Uri.parse('http://13.55.144.244:3000/api/cartTicket/create');
       final pref = await SharedPreferences.getInstance();
       final accessToken = pref.getString('access_token');
       Map<String, String> headers = {'access_token': accessToken!};
@@ -89,28 +89,28 @@ class _ModalTicketBuyState extends State<ModalTicketBuy> {
             SizedBox(height: 16),
             Text(
               '${widget.destext}',
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: Coloors.orange,
                   fontFamily: 'inter'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
               width: 300,
               height: 200,
               child: Image.asset('assets/img/ticket_regular.png'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Container(
-              padding: EdgeInsets.only(left: 50),
+              padding: const EdgeInsets.only(left: 50),
               child: Column(
                 children: [
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Stock: ${widget.stock}',
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontFamily: 'inter',
                           fontWeight: FontWeight.bold),
@@ -124,7 +124,7 @@ class _ModalTicketBuyState extends State<ModalTicketBuy> {
                         locale: 'id_ID',
                         symbol: 'Rp',
                       ).format(widget.price)}',
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontFamily: 'inter',
                           fontWeight: FontWeight.bold),
@@ -133,7 +133,7 @@ class _ModalTicketBuyState extends State<ModalTicketBuy> {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -145,14 +145,14 @@ class _ModalTicketBuyState extends State<ModalTicketBuy> {
                     color: Coloors.green,
                   ),
                   child: IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.remove,
                       color: Colors.white,
                     ),
                     onPressed: decrementCount,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Container(
@@ -160,14 +160,14 @@ class _ModalTicketBuyState extends State<ModalTicketBuy> {
                   child: Center(
                     child: Text(
                       'Qty : ' + count.toString(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontFamily: 'inter',
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Container(
@@ -178,7 +178,7 @@ class _ModalTicketBuyState extends State<ModalTicketBuy> {
                     color: Coloors.green,
                   ),
                   child: IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.add,
                       color: Colors.white,
                     ),
@@ -187,7 +187,7 @@ class _ModalTicketBuyState extends State<ModalTicketBuy> {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Container(
               height: 60,
               width: 210,
@@ -196,7 +196,7 @@ class _ModalTicketBuyState extends State<ModalTicketBuy> {
                 color: Coloors.green,
               ),
               child: IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.shopping_cart,
                   color: Colors.white,
                 ),
@@ -205,7 +205,7 @@ class _ModalTicketBuyState extends State<ModalTicketBuy> {
                 },
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
           ],
         ),
       ),

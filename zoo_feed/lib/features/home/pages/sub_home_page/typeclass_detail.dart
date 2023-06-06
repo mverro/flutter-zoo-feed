@@ -41,7 +41,7 @@ class _TypeClassDetailPageState extends State<TypeClassDetailPage> {
 
   Future<void> getclassDetail() async {
     final response = await http.get(Uri.parse(
-        'http://192.168.2.4:3000/api/classtypes/detail/${widget.typeId}'));
+        'http://13.55.144.244:3000/api/classtypes/detail/${widget.typeId}'));
     if (response.statusCode == 200) {
       setState(() {
         classDetail = json.decode(response.body);
@@ -59,7 +59,7 @@ class _TypeClassDetailPageState extends State<TypeClassDetailPage> {
   @override
   Widget build(BuildContext context) {
     if (classDetail == null) {
-      return Scaffold(
+      return const Scaffold(
         body: Center(
           child: CircularProgressIndicator(),
         ),
@@ -91,7 +91,7 @@ class _TypeClassDetailPageState extends State<TypeClassDetailPage> {
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           image: NetworkImage(
-                            'http://192.168.2.4:3000/${users['imageUrl']}',
+                            'http://13.55.144.244:3000/${users['imageUrl']}',
                           ),
                           fit: BoxFit.cover,
                         ),
@@ -139,7 +139,7 @@ class _TypeClassDetailPageState extends State<TypeClassDetailPage> {
                                 color: Colors.transparent,
                                 child: Image(
                                   image: NetworkImage(
-                                    'http://192.168.2.4:3000/' +
+                                    'http://13.55.144.244:3000/' +
                                         classDetail['imageUrl'],
                                   ),
                                   fit: BoxFit.cover,
@@ -170,7 +170,7 @@ class _TypeClassDetailPageState extends State<TypeClassDetailPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Container(
                       width: 350,
                       child: Text(
@@ -182,7 +182,7 @@ class _TypeClassDetailPageState extends State<TypeClassDetailPage> {
                         textAlign: TextAlign.justify,
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Container(
                       width: 350,
                       child: const Center(
@@ -224,7 +224,7 @@ class _TypeClassDetailPageState extends State<TypeClassDetailPage> {
                                     );
                                   },
                                   child: Container(
-                                    padding: EdgeInsets.only(right: 10),
+                                    padding: const EdgeInsets.only(right: 10),
                                     child: smallcard(
                                         imageUrl: animal['imageUrl'],
                                         text: '',

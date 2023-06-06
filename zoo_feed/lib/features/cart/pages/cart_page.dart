@@ -70,7 +70,7 @@ class _CartPageState extends State<CartPage>
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     image: NetworkImage(
-                      'http://192.168.2.4:3000/${users['imageUrl']}',
+                      'http://13.55.144.244:3000/${users['imageUrl']}',
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -80,7 +80,7 @@ class _CartPageState extends State<CartPage>
           ],
           bottom: TabBar(
             controller: _tabController,
-            indicator: UnderlineTabIndicator(
+            indicator: const UnderlineTabIndicator(
               borderSide: BorderSide(
                 color: Coloors.orange,
                 width: 8,

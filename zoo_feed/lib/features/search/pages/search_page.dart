@@ -19,7 +19,7 @@ class _SearchPageState extends State<SearchPage> {
 
   Future<void> getAnimals() async {
     final response =
-        await http.get(Uri.parse('http://192.168.2.4:3000/api/animals/'));
+        await http.get(Uri.parse('http://13.55.144.244:3000/api/animals/'));
     if (response.statusCode == 200) {
       setState(() {
         animals = json.decode(response.body);
@@ -66,7 +66,7 @@ class _SearchPageState extends State<SearchPage> {
                   color: Colors.amber,
                   image: DecorationImage(
                       image: NetworkImage(
-                        'http://192.168.2.4:3000/${animal['imageUrl']}',
+                        'http://13.55.144.244:3000/${animal['imageUrl']}',
                       ),
                       fit: BoxFit.cover),
                 ),
